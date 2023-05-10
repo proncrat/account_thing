@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Settings</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<dialog id="account_details">
+    <form enctype="multipart/form-data" id="details_form" method="dialog" >
+        <label for="Username">Username:</label>
+        <input type="text" id="Username" name="Username" placeholder="">
+        <br>
+        <label for="Password">Password:</label>
+        <input type="text" id="Password" name="Password">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"  placeholder="">
+        <br>
+        <label for="joined">Joined:</label>
+        <input type="text" id="joined" name="joined" disabled placeholder="">
+        <br>
+        <label for="pfp">Profile pic:</label>
+        <input type="file" id="pfp" name="pfp">
+        <br>
+        <input type="submit" value="Save changes">
+        <!--<br>
+        <input type="button" value="Delete account">-->
+        <br>
+        <input type="button" value="Verify email">
+      </form> 
+</dialog>
+<dialog id="import_modal">
+  <p style="font-size: 3rem;">One day</p>
+</dialog>
+<dialog id="export_modal">
+  <p style="font-size: 3rem;">One day</p>
+</dialog>
+<div class="pinning-header">
+  <div class="pinning-header-container" >
+      <div class=" main-header menu-navigation" role="navigation">
+          <div  style="flex-grow: 1;" class="col-grey" >
+              <div id="more-info-nav" style="display: flex; flex-wrap: wrap;">
+              <a href="/">Home</a>
+              <a href="../genres/">Genres</a>
+              <a href="/settings/" class="active" >Settings</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="centering_container" >
+  <p class="upper_title" >Account</p>
+  <div class="seperator" style="background-color: #4d4d4d;height: 10rem;width: 60%; display: flex;flex-direction: row;align-items: center;max-width:890px;">
+      <img id="guchi_image" style="height: 85%;margin: 10px;" src="">
+      <div style="display: flex;flex-direction: column;">
+          <div style="display:flex;" >
+              <p id="cutesy_time_thing" style="margin: 0;font-size: 3rem;"></p>
+              <p id="main_username" style="margin: 0;font-size: 3rem;margin-left: 1rem;"></p>
+          </div>
+          <div style="display:flex;" >
+              <p id="sync_status" style="color: rgb(154, 160, 166);margin: 0;font-size: 2rem;"></p> 
+              <p id="sync_time" style="color: rgb(154, 160, 166);margin: 0;font-size: 2rem;margin-left:30px;" >Synced:</p>
+          </div>
+      </div>
+      <button onclick="log_out()" id="log_out" class="login_button" style="display: none;">Log Out</button>
+      <a href="login.php" id="log_in" class="login_button" style="display: none;">Sign In</a>
+  </div>
+  <div class="seperator under_button_holder">
+      <button id="export" class="under_button">Export Data</button>
+      <button id="import" class="under_button">Import Data</button>
+      <button id="change_details" class="under_button">Change details</button>
+      <button id="sync_manual" class="under_button">Manual Sync</button>
+      <button id="test" class="under_button">Get sync time</button>
+  </div>
+  <p class="upper_title" style="margin-top: 60px;">Video Player</p>
+  <div class="seperator" style="background-color: #4d4d4d;width: 60%; display: flex;flex-direction: column;align-items: center;max-width:890px;">
+    <div class="setting_slide_holder">
+      <p>Auto next</p>
+      <label class="toggle-control">
+        <input type="checkbox">
+        <span class="control"></span>
+      </label>
+    </div>
+    <div class="setting_slide_holder">
+      <p>Auto play</p>
+      <label class="toggle-control">
+        <input type="checkbox">
+        <span class="control"></span>
+      </label>
+    </div>
+    <div class="setting_slide_holder">
+      <p>Auto skip intro</p>
+      <label class="toggle-control">
+        <input type="checkbox" >
+        <span class="control"></span>
+      </label>
+    </div>
+    <div class="setting_slide_holder">
+      <p>Auto skip credits</p>
+      <label class="toggle-control">
+        <input type="checkbox" >
+        <span class="control"></span>
+      </label>
+    </div>
+  </div>
+  <p class="upper_title" style="margin-top: 60px;">Misc</p>
+  <div class="seperator" style="background-color: #4d4d4d;width: 60%; display: flex;flex-direction: column;align-items: center;max-width:890px;">
+    <div class="setting_slide_holder">
+      <p>Auto Sync</p>
+      <label class="toggle-control">
+        <input type="checkbox">
+        <span class="control"></span>
+      </label>
+    </div>
+    <div class="setting_slide_holder">
+      <p>Share telemetry data</p>
+      <label class="toggle-control">
+        <input type="checkbox" >
+        <span class="control"></span>
+      </label>
+    </div>
+    <div class="setting_slide_holder">
+      <p>Custom recommendations (Beta)</p>
+      <label class="toggle-control">
+        <input type="checkbox" >
+        <span class="control"></span>
+      </label>
+    </div>
+  </div>
+</div>
+<div style="width: 100%;height: auto;margin-top: 10px;" >
+  <p id="footer" class="text-small text-center col-grey" style="margin-bottom: 0;">A Braindead Project<br><br></p>
+</div>
+</body>
+</html>
+<script src="main.js" ></script>
