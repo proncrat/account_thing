@@ -5,6 +5,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     echo "Nuh uh";
     exit;
 }
+require_once "config.php";
 $id = $_SESSION["id"];
 
 $target_dir = "../img/users/";
@@ -49,5 +50,15 @@ if ($uploadOk == 0) {
     echo "worked";
   } else {
     echo "didnt work";
+    exit;
   }
 }
+
+$sql = "UPDATE users SET image = '$target_file' WHERE id = $id ";
+
+if ($link->query($sql) === TRUE) {
+    echo "Worked";
+} else {
+    echo "Error updating record: " . $link->error;
+}
+$link->close();

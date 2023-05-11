@@ -10,8 +10,6 @@ $id = $_SESSION["id"];
 $username = $_POST['username'];
 $password = $_POST['password'];
 $email = $_POST['email'];
-$pfp = $_POST['pfp'];
-echo $pfp;
 
 if (empty($password)){
     $sql = "UPDATE users SET username = '$username' , email = '$email' WHERE id = $id ";
